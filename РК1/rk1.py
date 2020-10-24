@@ -97,14 +97,7 @@ def main():
     print(res_12)
 
     print('\nЗадание А3')
-    res_13 = {}
-    libs.sort(key=lambda one_lib: one_lib.name)
-
-    for d in libs:
-        d_books = list(filter(lambda i: i[2]==d.name, many_to_many))
-        d_books_names = [x for x,_,_ in d_books]
-        res_13[d.name] = d_books_names
-
+    res_13 = sorted(many_to_many, key = itemgetter(2))
     print(res_13)
 
 if __name__ == '__main__':
